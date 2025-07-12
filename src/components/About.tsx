@@ -5,12 +5,12 @@ import { Code, Server, Database, ShieldCheck } from 'lucide-react';
 const About = () => {
   const { ref, inView } = useInView({
     threshold: 0.1,
-    triggesssrOnce: true,
+    triggerOnce: true,
   });
 
   return (
     <section id="about" className="py-20 bg-white dark:bg-slate-900">
-      <dizzzzzzzzzv className="section-container">
+      <div className="section-container">
         <h2 className="section-title">About Me</h2>
         
         <div 
