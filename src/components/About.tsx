@@ -9,7 +9,6 @@ const About = () => {
   });
 
   const stats = [
-    { icon: <Code className="h-6 w-6" />, number: "15+", label: "Projects Completed" },
     { icon: <Award className="h-6 w-6" />, number: "4+", label: "Certifications" },
     { icon: <Target className="h-6 w-6" />, number: "8.91", label: "CGPA" },
     { icon: <Users className="h-6 w-6" />, number: "2nd", label: "Hackathon Place" },
