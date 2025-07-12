@@ -83,21 +83,23 @@ const Projects = () => {
 
         <div
           ref={ref}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in ${inView ? 'appear' : ''}`}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 ${inView ? 'animate-slide-in-up' : 'opacity-0'}`}
         >
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`card transition-all duration-300 hover:shadow-xl hover:scale-[1.01] ${
+              className={`card transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] hover:-rotate-1 ${
                 expandedProject === project.id ? 'md:col-span-2 lg:col-span-3' : ''
               }`}
+              style={{ animationDelay: `${project.id * 200}ms` }}
             >
               <div className="relative aspect-video overflow-hidden rounded-t-xl">
                 <img
                   src={project.image}
                   alt={`${project.title} preview`}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
               <div className="p-4">
@@ -108,7 +110,7 @@ const Projects = () => {
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 text-xs rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400"
+                      className="px-2 py-1 text-xs rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 hover:scale-105 transition-transform duration-200"
                     >
                       {tag}
                     </span>
@@ -116,7 +118,7 @@ const Projects = () => {
                 </div>
 
                 {expandedProject === project.id && (
-                  <div className="mt-4 space-y-3 animate-fadeIn">
+                  <div className="mt-4 space-y-3 animate-slide-in-up">
                     <ul className="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-300">
                       {project.details.map((detail, index) => (
                         <li key={index}>{detail}</li>
@@ -130,7 +132,7 @@ const Projects = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="View GitHub repository"
-                          className="flex items-center text-slate-700 dark:text-slate-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                          className="flex items-center text-slate-700 dark:text-slate-300 hover:text-teal-500 dark:hover:text-teal-400 transition-all duration-300 hover:scale-105"
                         >
                           <Github className="h-4 w-4 mr-1" />
                           <span>Source Code</span>
@@ -142,7 +144,7 @@ const Projects = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="Visit Live Demo"
-                          className="flex items-center text-slate-700 dark:text-slate-300 hover:text-teal-500 dark:hover:text-teal-400 transition-colors"
+                          className="flex items-center text-slate-700 dark:text-slate-300 hover:text-teal-500 dark:hover:text-teal-400 transition-all duration-300 hover:scale-105"
                         >
                           <ExternalLink className="h-4 w-4 mr-1" />
                           <span>Live Demo</span>
@@ -154,11 +156,11 @@ const Projects = () => {
 
                 <button
                   onClick={() => toggleProject(project.id)}
-                  className="flex items-center text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300 mt-4 text-sm font-medium"
+                  className="flex items-center text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300 mt-4 text-sm font-medium transition-all duration-300 hover:scale-105"
                 >
                   {expandedProject === project.id ? 'Show Less' : 'Learn More'}
                   <ChevronRight
-                    className={`h-4 w-4 ml-1 transition-transform duration-300 ${
+                    className={`h-4 w-4 ml-1 transition-transform duration-500 ${
                       expandedProject === project.id ? 'rotate-90' : ''
                     }`}
                   />

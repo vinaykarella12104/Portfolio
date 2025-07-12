@@ -15,16 +15,16 @@ const About = () => {
         
         <div 
           ref={ref}
-          className={`grid md:grid-cols-5 gap-8 items-start fade-in ${inView ? 'appear' : ''}`}
+          className={`grid md:grid-cols-5 gap-8 items-start ${inView ? 'animate-slide-in-up' : 'opacity-0'}`}
         >
           <div className="md:col-span-3 space-y-6">
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className={`text-slate-600 dark:text-slate-300 leading-relaxed transition-all duration-700 ${inView ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
              I am a motivated Computer Science student at Sri Vasavi Engineering College with practical experience in building scalable web applications and backend APIs using technologies like Django and Spring Boot. My academic background has equipped me with a strong foundation in software engineering, database design, and secure authentication practices.
             </p>
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className={`text-slate-600 dark:text-slate-300 leading-relaxed transition-all duration-700 ${inView ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
               I have applied these skills to develop real-world solutions such as grievance management systems, learning management platforms, and secure banking APIs. These projects reflect my ability to design and implement user-centric applications that are both functional and reliable, while working effectively in collaborative environments.
             </p>
-            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className={`text-slate-600 dark:text-slate-300 leading-relaxed transition-all duration-700 ${inView ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ animationDelay: '600ms' }}>
               What drives me is the opportunity to create technology that addresses real problems and adds value. I am committed to continuous learning and actively explore new tools, frameworks, and industry trends to sharpen my technical skills and stay future-ready.
 
 
@@ -33,7 +33,7 @@ const About = () => {
           
           <div className="md:col-span-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="card p-6">
+              <div className={`card p-6 transition-all duration-700 ${inView ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: '300ms' }}>
                 <Code className="h-8 w-8 text-teal-500 mb-4" />
                 <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-white">Web Development</h3>
                 <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -41,7 +41,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="card p-6">
+              <div className={`card p-6 transition-all duration-700 ${inView ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: '500ms' }}>
                 <Server className="h-8 w-8 text-teal-500 mb-4" />
                 <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-white">Backend Development</h3>
                 <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -49,7 +49,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="card p-6">
+              <div className={`card p-6 transition-all duration-700 ${inView ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: '700ms' }}>
                 <Database className="h-8 w-8 text-teal-500 mb-4" />
                 <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-white">Database Design</h3>
                 <p className="text-slate-600 dark:text-slate-300 text-sm">
@@ -57,7 +57,7 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="card p-6">
+              <div className={`card p-6 transition-all duration-700 ${inView ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: '900ms' }}>
                 <ShieldCheck className="h-8 w-8 text-teal-500 mb-4" />
                 <h3 className="text-lg font-semibold mb-2 text-slate-800 dark:text-white">Security</h3>
                 <p className="text-slate-600 dark:text-slate-300 text-sm">

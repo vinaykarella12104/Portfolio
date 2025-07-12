@@ -30,23 +30,27 @@
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-teal-500 text-white font-medium rounded-md shadow-md hover:bg-teal-600 transition-colors duration-300 inline-flex items-center justify-center;
+    @apply px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-500 text-white font-medium rounded-md shadow-lg hover:shadow-xl hover:from-teal-600 hover:to-blue-600 transition-all duration-300 inline-flex items-center justify-center;
   }
 
   .btn-outline {
-    @apply px-6 py-3 border-2 border-teal-500 text-teal-500 dark:text-teal-400 font-medium rounded-md hover:bg-teal-500/10 transition-colors duration-300 inline-flex items-center justify-center;
+    @apply px-6 py-3 border-2 border-teal-500 text-teal-500 dark:text-teal-400 font-medium rounded-md hover:bg-teal-500/10 hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center;
   }
 
   .card {
-    @apply bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-slate-200 dark:border-slate-700;
+    @apply bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-slate-200 dark:border-slate-700;
   }
 
   .fade-in {
-    @apply opacity-0 translate-y-10 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-10 transition-all duration-1000 ease-out;
   }
   
   .fade-in.appear {
     @apply opacity-100 translate-y-0;
+  }
+  
+  .stagger-animation {
+    animation-delay: calc(var(--stagger) * 100ms);
   }
 }
 
@@ -67,4 +71,93 @@
   background-color: #14b8a6;
   border-radius: 4px;
   transition: width 1s ease-in-out;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInRotate {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-rotate {
+  animation: fadeInRotate 0.8s ease-out forwards;
 }

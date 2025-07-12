@@ -38,6 +38,38 @@ export default {
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+        'slide-in-up': 'slideInUp 0.8s ease-out forwards',
+        'scale-in': 'scaleIn 0.6s ease-out forwards',
+        'fade-in-rotate': 'fadeInRotate 0.8s ease-out forwards',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        slideInLeft: {
+          from: { opacity: '0', transform: 'translateX(-50px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideInRight: {
+          from: { opacity: '0', transform: 'translateX(50px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideInUp: {
+          from: { opacity: '0', transform: 'translateY(50px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          from: { opacity: '0', transform: 'scale(0.8)' },
+          to: { opacity: '1', transform: 'scale(1)' },
+        },
+        fadeInRotate: {
+          from: { opacity: '0', transform: 'rotate(-10deg) scale(0.8)' },
+          to: { opacity: '1', transform: 'rotate(0deg) scale(1)' },
+        },
       },
     },
   },
