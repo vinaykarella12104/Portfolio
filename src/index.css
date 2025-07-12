@@ -229,11 +229,14 @@
     box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(20, 184, 166, 0.1);
   }
 
+ @layer utilities {
   /* Enhanced fade-in animations */
   .fade-in {
     @apply opacity-0 translate-y-16 transition-all duration-1200 ease-out transform-gpu;
     filter: blur(5px);
   }
+}
+
   
   .fade-in.appear {
     @apply opacity-100 translate-y-0;
