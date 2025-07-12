@@ -37,7 +37,6 @@ const Skills = () => {
       { name: 'VS Code', category: 'tools' },
       { name: 'Postman', category: 'tools' },
       { name: 'Intellij', category: 'tools' },
-
     ];
 
     setSkills(allSkills);
@@ -126,11 +125,11 @@ const Skills = () => {
                 activeTab === 'languages'
                   ? 'bg-teal-500 text-white shadow-md'
                   : 'bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-teal-100 dark:hover:bg-slate-600 hover:shadow-sm'
-            className={`transition-all duration-1000 ${inView ? 'animate-slide-in-up' : 'opacity-0'}`}
+              }`}
               onClick={() => handleTabChange('languages')}
             >
               Languages
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 transform ${
+            </button>
             <button
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeTab === 'frameworks'
@@ -140,7 +139,7 @@ const Skills = () => {
               onClick={() => handleTabChange('frameworks')}
             >
               Frameworks
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 transform ${
+            </button>
             <button
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeTab === 'database'
@@ -150,17 +149,17 @@ const Skills = () => {
               onClick={() => handleTabChange('database')}
             >
               Databases
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 transform ${
+            </button>
             <button
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                      className={`px-4 py-2 rounded-lg border text-sm font-medium text-slate-700 dark:text-slate-300 transition-all duration-300 hover:shadow-md hover:scale-110 transform cursor-default ${getCategoryColor(skill.category)}`}
+                activeTab === 'tools'
                   ? 'bg-teal-500 text-white shadow-md'
                   : 'bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-teal-100 dark:hover:bg-slate-600 hover:shadow-sm'
               }`}
               onClick={() => handleTabChange('tools')}
             >
               Tools
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 transform ${
+            </button>
           </div>
           
           {activeTab === 'all' ? (
@@ -170,7 +169,7 @@ const Skills = () => {
                   <div className="flex items-center mb-4">
                     {getCategoryIcon(category)}
                     <h3 className="text-lg font-semibold ml-2 text-slate-800 dark:text-white">
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 transform ${
+                      {categoryTitles[category as keyof typeof categoryTitles]}
                     </h3>
                   </div>
                   <div className="flex flex-wrap gap-3">
@@ -184,7 +183,7 @@ const Skills = () => {
                     ))}
                   </div>
                 </div>
-                  <div key={category} className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              ))}
             </div>
           ) : (
             <div className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-sm">
@@ -195,7 +194,7 @@ const Skills = () => {
                 </h3>
               </div>
               <div className="flex flex-wrap gap-3">
-                          className={`px-4 py-2 rounded-lg border text-sm font-medium text-slate-700 dark:text-slate-300 transition-all duration-300 hover:shadow-md hover:scale-110 transform cursor-default ${getCategoryColor(category)}`}
+                {displayedSkills.map((skill, index) => (
                   <span
                     key={index}
                     className={`px-4 py-2 rounded-lg border text-sm font-medium text-slate-700 dark:text-slate-300 transition-all duration-300 hover:shadow-md hover:scale-105 ${getCategoryColor(skill.category)}`}
@@ -205,7 +204,7 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-              <div className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          )}
         </div>
       </div>
     </section>
