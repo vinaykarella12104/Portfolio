@@ -46,7 +46,6 @@ const Navbar = () => {
           duration={500}
           className="text-2xl font-bold cursor-pointer text-slate-800 dark:text-white"
         >
-          <span className="text-teal-500">P</span>ortfolio
         </Link>
 
         {/* Desktop Nav */}
