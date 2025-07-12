@@ -59,13 +59,7 @@ const About = () => {
             <div className={`mt-8 p-6 animated-border transition-all duration-700 hover-lift ${inView ? 'animate-fade-in-rotate' : 'opacity-0'}`} style={{ animationDelay: '800ms' }}>
               <div className="flex items-center mb-3">
                 <Zap className="h-5 w-5 text-teal-500 mr-2 animate-pulse" />
-                <h3 className="font-semibold text-slate-800 dark:text-white">Ready to Collaborate</h3>
-              </div>
-              <p className="text-slate-600 dark:text-slate-300">
-                I'm actively seeking internship opportunities and exciting projects to contribute to. Let's build something amazing together!
-              </p>
-            </div>
-          </div>
+                          </div>
           
           <div className="md:col-span-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
