@@ -58,8 +58,8 @@ const About = () => {
             {/* Call to action */}
             <div className={`mt-8 p-6 animated-border transition-all duration-700 hover-lift ${inView ? 'animate-fade-in-rotate' : 'opacity-0'}`} style={{ animationDelay: '800ms' }}>
               <div className="flex items-center mb-3">
-                <Zap className="h-5 w-5 text-teal-500 mr-2 animate-pulse" />
-                          </div>
+                <Zap className="h-5 w-5 text-teal-500 mr-2 animate-pulse" />        
+          </div>
           
           <div className="md:col-span-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
