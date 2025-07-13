@@ -121,7 +121,7 @@ const Certifications = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-12">
           <h2 className="section-title mb-4 sm:mb-0">Certifications & Achievements</h2>
           <div className="animate-slide-in-right" style={{ animationDelay: '0.5s' }}>
-            <AdminButton type="certification" onAdd={handleAddCertification} />
+            <AdminButton type="certification" />
           </div>
         </div>
 
