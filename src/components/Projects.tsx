@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { ChevronRight, Github, ExternalLink, Star, Calendar, Users } from 'lucide-react';
+import AdminButton from './AdminButton';
 
 interface Project {
   id: number;
@@ -17,13 +18,8 @@ interface Project {
 
 const Projects = () => {
   const [expandedProject, setExpandedProject] = useState<number | null>(null);
+  const [projects, setProjects] = useState<Project[]>([
 
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-
-  const projects: Project[] = [
     {
       id: 1,
       title: 'Resolve Radar',
@@ -78,7 +74,29 @@ const Projects = () => {
       ],
       github: 'https://github.com/vinaykarella12104/Smart_QR_Attendance'
     }
-  ];
+  ]);
+
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const handleAddProject = (newProject: any) => {
+    const project: Project = {
+      id: Date.now(),
+      title: newProject.title,
+      description: newProject.description,
+      image: newProject.filePreview || 'https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      tags: newProject.tags,
+      year: newProject.year,
+      status: newProject.status as 'completed' | 'in-progress' | 'featured',
+      details: newProject.details,
+      github: newProject.link?.includes('github') ? newProject.link : undefined,
+      demo: newProject.link && !newProject.link.includes('github') ? newProject.link : undefined
+    };
+    
+    setProjects(prev => [project, ...prev]);
+  };
 
   const toggleProject = (id: number) => {
     setExpandedProject(expandedProject === id ? null : id);
@@ -112,7 +130,12 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-white dark:bg-slate-900">
       <div className="section-container">
-        <h2 className="section-title">Projects</h2>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-12">
+          <h2 className="section-title mb-4 sm:mb-0">Projects</h2>
+          <div className="animate-slide-in-right" style={{ animationDelay: '0.5s' }}>
+            <AdminButton type="project" onAdd={handleAddProject} />
+          </div>
+        </div>
 
         {/* Projects Stats */}
         <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 ${inView ? 'animate-slide-in-up' : 'opacity-0 translate-y-10'}`}>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Award, ChevronDown, ChevronUp, Download, Eye } from 'lucide-react';
+import AdminButton from './AdminButton';
 
 interface Certification {
   id: number;
@@ -14,13 +15,8 @@ interface Certification {
 
 const Certifications = () => {
   const [expandedCert, setExpandedCert] = useState<number | null>(null);
+  const [certifications, setCertifications] = useState<Certification[]>([
 
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-
-  const certifications: Certification[] = [
     {
       id: 1,
       title: 'Oracle Cloud Infrastructure Foundations Associate',
@@ -55,7 +51,26 @@ const Certifications = () => {
       description: 'Completed a virtual internship program focused on AWS cloud services, architecture, and best practices.',
       certificatePdf: '/certificates/aws-virtual-internship.pdf'
     }
-  ];
+  ]);
+
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const handleAddCertification = (newCert: any) => {
+    const certification: Certification = {
+      id: Date.now(),
+      title: newCert.title,
+      issuer: 'Custom Entry',
+      date: newCert.year,
+      description: newCert.description,
+      credential: `CERT-${Date.now()}`,
+      certificatePdf: newCert.filePreview || '/certificates/placeholder.pdf'
+    };
+    
+    setCertifications(prev => [certification, ...prev]);
+  };
 
   const toggleCertificate = (id: number) => {
     setExpandedCert(prev => (prev === id ? null : id));
@@ -103,7 +118,12 @@ const Certifications = () => {
   return (
     <section id="certifications" className="py-20 bg-white dark:bg-slate-900">
       <div className="section-container">
-        <h2 className="section-title">Certifications & Achievements</h2>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 sm:mb-12">
+          <h2 className="section-title mb-4 sm:mb-0">Certifications & Achievements</h2>
+          <div className="animate-slide-in-right" style={{ animationDelay: '0.5s' }}>
+            <AdminButton type="certification" onAdd={handleAddCertification} />
+          </div>
+        </div>
 
         <div ref={ref} className={`fade-in ${inView ? 'appear' : ''}`}>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
