@@ -582,4 +582,3 @@ const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose, onSubmit, type
 };
 
 export default AdminModal;
-export default AdminModal;
