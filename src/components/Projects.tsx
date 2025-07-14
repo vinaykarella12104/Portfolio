@@ -62,7 +62,7 @@ const Projects = () => {
       description: 'Automated attendance with anti-proxy security and timetable awareness',
       image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Spring Boot', 'Java', 'AES Encryption', 'PostgreSQL'],
-      year: '2024',
+      year: '2025',
       status: 'Featured',
       details: [
         'Developed REST APIs using Spring Boot for secure attendance marking with QR codes',
