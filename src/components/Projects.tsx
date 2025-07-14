@@ -26,7 +26,7 @@ const Projects = () => {
       image: 'https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Django', 'Python', 'ReportLab', 'SQLite'],
       year: '2023',
-      status: 'featured',
+      status: 'Completed',
       details: [
         'Web-based complaint management portal with personalized user dashboards',
         'Developed a full-stack grievance redressal web application using Django',
@@ -63,7 +63,7 @@ const Projects = () => {
       image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Spring Boot', 'Java', 'AES Encryption', 'PostgreSQL'],
       year: '2024',
-      status: 'completed',
+      status: 'Featured',
       details: [
         'Developed REST APIs using Spring Boot for secure attendance marking with QR codes',
         'Implemented AES encryption for QR payload security and anti-proxy validation',
