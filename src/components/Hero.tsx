@@ -117,10 +117,8 @@ const Hero = () => {
                   Contact Me
                 </Link>
                 <a
-                  href="/Karella%20Pavani%20Vinay%20Kumar.pdf"
-                  download="Vinay_Kumar_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/Karella Pavani Vinay Kumar.pdf"
+                  download="Karella Pavani Vinay Kumar.pdf"
                   className="btn-outline inline-flex items-center group animate-bounce-in"
                   style={{ animationDelay: '0.7s' }}
                 >
