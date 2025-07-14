@@ -25,7 +25,7 @@ const Projects = () => {
       description: 'Efficient Solution for Grievances',
       image: 'https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Django', 'Python', 'ReportLab', 'SQLite'],
-      year: '2023',
+      year: '2024',
       status: 'Completed',
       details: [
         'Web-based complaint management portal with personalized user dashboards',
