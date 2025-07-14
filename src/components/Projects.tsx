@@ -43,7 +43,7 @@ const Projects = () => {
       description: 'Web-based e-learning platform for Sri Vasavi Engineering College',
       image: 'https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       tags: ['Django', 'PostgreSQL', 'HLS', 'Bootstrap'],
-      year: '2023',
+      year: '2024',
       status: 'completed',
       details: [
         'Developed and deployed a Django-based LMS with PostgreSQL, widely used by students and faculty during semester exams',
