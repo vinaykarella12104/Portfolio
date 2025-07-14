@@ -75,7 +75,7 @@
   }
 
   .hover-lift:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-4px) scale(1.01);
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
   }
 
@@ -84,7 +84,7 @@
   }
 
   .hover-magnetic:hover {
-    transform: scale(1.05) rotate(1deg);
+    transform: scale(1.02) rotate(0.5deg);
   }
 
   .hover-glow {
@@ -164,7 +164,7 @@
   }
 
   .btn-primary:hover {
-    transform: translateY(-3px) scale(1.05) rotateX(5deg);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 25px 50px -12px rgba(20, 184, 166, 0.4), 0 20px 25px -5px rgba(59, 130, 246, 0.3);
     filter: brightness(1.1);
   }
@@ -190,7 +190,7 @@
   }
 
   .btn-outline:hover {
-    transform: translateY(-3px) scale(1.05) rotateX(5deg);
+    transform: translateY(-2px) scale(1.02);
     background: linear-gradient(135deg, #14b8a6, #3b82f6);
     -webkit-background-clip: initial;
     -webkit-text-fill-color: white;
@@ -242,7 +242,7 @@
   }
 
   .card:hover {
-    transform: translateY(-12px) rotateX(8deg) rotateY(2deg) scale(1.02);
+    transform: translateY(-6px) scale(1.01);
     box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3), 0 0 40px rgba(20, 184, 166, 0.1);
   }
 }
@@ -325,7 +325,7 @@
   }
 
   .interactive-element:hover {
-    transform: scale(1.05) translateY(-2px);
+    transform: scale(1.02) translateY(-1px);
     filter: brightness(1.1);
   }
 
