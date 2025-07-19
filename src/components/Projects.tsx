@@ -261,7 +261,7 @@ const Projects = () => {
                   {expandedProject === project.id ? 'Show Less' : 'Learn More'}
                   <ChevronRight
                     className={`h-4 w-4 ml-1 transition-transform duration-500 group-hover:translate-x-2 ${
-                      expandedProject === project.id ? 'rotate-90' : ''
+                      expandedProject === project.id ? 'rotate-90 transform' : ''
                     }`}
                   />
                 </button>
