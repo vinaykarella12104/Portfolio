@@ -54,7 +54,7 @@ const Projects = () => {
         'The development team received an official appreciation circular from the college for our contribution'
       ],
       github: 'https://github.com/vinaykarella12104/LMS-SVEC',
-      demo: 'https://lms-svec.herokuapp.com'
+      demo: 'https://lmssvec8988.pythonanywhere.com/'
     },
     {
       id: 3,
